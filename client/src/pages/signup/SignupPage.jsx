@@ -23,6 +23,8 @@ export default function LoginPage() {
     }
   };
 
+  // TODO: add error messages in FRONT for the user if email already exists
+
   return (
     <form className="signupForm" onSubmit={handleSubmit(onSubmit)}>
       <label htmlFor="username">Username:</label>
