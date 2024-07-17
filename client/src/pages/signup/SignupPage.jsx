@@ -15,12 +15,8 @@ export default function LoginPage() {
   const apiURL = import.meta.env.VITE_API_URL;
 
   const onSubmit = async (data) => {
-    const formData = { ...data };
-    delete formData.confirmemail;
-    delete formData.confirmpassword;
-
     try {
-      await axios.post(`${apiURL}/api/user/register`, formData);
+      await axios.post(`${apiURL}/api/user/register`, data);
       reset();
     } catch (err) {
       console.error(err);
@@ -40,8 +36,8 @@ export default function LoginPage() {
             message: "You need at least 2 characters",
           },
           maxLength: {
-            value: 120,
-            message: "You can't have more than 120 characters",
+            value: 80,
+            message: "You can't have more than 80 characters",
           },
         })}
       />
@@ -97,9 +93,9 @@ export default function LoginPage() {
           required: "This field is required !",
           pattern: {
             value:
-              /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){12,64}$/,
+              /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,64}$/,
             message:
-              "You need at least 12 characters, including one uppercase, one number and a special character",
+              "You need at least 8 characters, including one uppercase, one number and a special character",
           },
           maxLength: {
             value: 64,
@@ -119,7 +115,7 @@ export default function LoginPage() {
           required: "This field is required !",
           pattern: {
             value:
-              /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){12,64}$/,
+              /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,64}$/,
             message: "Invalid password format",
           },
           validate: (value) =>
