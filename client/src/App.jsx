@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import fetchAuth from "./utils/auth";
+import ToolsBar from "./components/toolbar/ToolsBar";
 import "./App.css";
 
 function App() {
@@ -12,9 +13,10 @@ function App() {
 
   return (
     <main>
-      <span>
-        connected as : {user?.username} role : {user?.role}
-      </span>
+      <p>
+        {user?.username} connected as {user?.role}
+      </p>
+      <ToolsBar user={user} setUser={setUser} />
       <Outlet context={{ user, setUser }} />
     </main>
   );

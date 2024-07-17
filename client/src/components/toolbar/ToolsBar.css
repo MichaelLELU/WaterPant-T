@@ -1,0 +1,14 @@
+@import url("../../variables.css");
+
+.toolsbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  background-color: var(--main-color-green);
+  color: var(--neutral-color);
+}
+
+.logo {
+  width: 5em;
+}
