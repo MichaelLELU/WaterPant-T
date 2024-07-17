@@ -1,0 +1,52 @@
+@import url("../../variables.css");
+
+.signupForm {
+  margin-top: 3em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  background-color: var(--main-color-green);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.signupForm input {
+  width: 60%;
+  padding: 0.5em;
+}
+
+.formError {
+  text-align: center;
+  color: var(--red);
+  font-size: 0.8rem;
+}
+
+.buttonForm {
+  background-color: var(--accent-color);
+  color: var(--neutral-color);
+  box-shadow: rgba(0, 0, 0, 0.2) 2.4px 2.4px 3.2px;
+  font-size: 1em;
+  border: none;
+  border-radius: 50px;
+  padding: 0.2em 1em;
+  margin-top: 1em;
+  cursor: pointer;
+}
+.buttonForm:hover {
+  box-shadow: none;
+}
+
+@media (min-width: 700px) {
+  .signupForm {
+    margin-top: 5em;
+    width: 40%;
+    margin: 3em auto;
+  }
+
+  .signupForm input {
+    width: 45%;
+    padding: 0.5em;
+  }
+}
