@@ -8,6 +8,7 @@ body {
   font-family: "faustina", sans-serif;
   background-color: var(--neutral-color);
   color: var(--main-color-black);
+  margin: 0;
 }
 
 input {

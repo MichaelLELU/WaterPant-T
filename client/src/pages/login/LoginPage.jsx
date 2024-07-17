@@ -1,12 +1,22 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useForm } from "react-hook-form";
-import { Link, useOutletContext } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useOutletContext, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function LoginPage() {
   const { user, setUser } = useOutletContext();
-  /*   const navigate = useNavigate(); */
-  console.info(user);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user?.role === "user") {
+      navigate(`/${user.username}page`);
+    }
+    if (user?.role === "admin") {
+      navigate("/rullmyworld");
+    }
+  }, [user, navigate]);
+
   const {
     register,
     handleSubmit,
@@ -33,6 +43,14 @@ export default function LoginPage() {
   return (
     <section>
       <div>
+        <h1>Login</h1>
+        <p>
+          Sign up or log in to access your personal watering schedule (with the
+          ability to add plants with their photos, a forecasted watering
+          calendar, and more to come).
+          <br />
+          <strong>Your plants deserve organization.</strong>
+        </p>
         <p>
           Don't have an account ?<Link to="/signup">Click here</Link>
         </p>
@@ -83,7 +101,7 @@ export default function LoginPage() {
           )}
         </div>
 
-        <button className="buttonForm" type="submit">
+        <button className="buttonForm" type="submit" onClick={useEffect}>
           Login
         </button>
       </form>
