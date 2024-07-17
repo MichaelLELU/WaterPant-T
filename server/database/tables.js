@@ -1,6 +1,8 @@
 // Import the repository modules responsible for handling data operations on the tables
 const UserRepository = require("./models/UserRepository");
-
+const SolarExpoRepository = require("./models/SolarExpoRepository");
+const WateringFreqRepository = require("./models/WateringFreqRepository");
+const PlantRepository = require("./models/PlantRepository");
 // Create an empty object to hold data repositories for different tables
 const tables = {};
 
@@ -10,6 +12,9 @@ const tables = {};
 
 // Register each repository as data access point for its table
 tables.user = new UserRepository();
+tables.plant = new PlantRepository();
+tables.wateringFrequency = new WateringFreqRepository();
+tables.solarExpo = new SolarExpoRepository();
 
 /* ************************************************************************* */
 

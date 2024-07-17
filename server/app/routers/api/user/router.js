@@ -2,6 +2,8 @@ const express = require("express");
 
 const router = express.Router();
 
+// TODO: validate user midleware
+
 const {
   browse,
   read,
