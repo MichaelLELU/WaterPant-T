@@ -31,7 +31,7 @@ CREATE TABLE plant (
   name VARCHAR(80) NOT NULL,
   surname VARCHAR(80),
   picture VARCHAR(255),
-  place VARCHAR(80),
+  place VARCHAR(80) NOT NULL,
   user_id INT UNSIGNED NOT NULL,
   watering_frequency_id INT UNSIGNED NOT NULL,
   FOREIGN KEY(watering_frequency_id) REFERENCES watering_frequency(id),

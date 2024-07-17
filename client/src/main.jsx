@@ -8,6 +8,7 @@ import {
 import SignupPage from "./pages/signup/SignupPage";
 import LoginPage from "./pages/login/LoginPage";
 import UserPage from "./pages/user/UserPage";
+import AddPlantPage from "./pages/addplant/AddPlantPage";
 import App from "./App";
 import "./App.css";
 
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/:usernamepage",
         element: <UserPage />,
+      },
+      {
+        path: "/addplant",
+        element: <AddPlantPage />,
       },
       {
         path: "/*",

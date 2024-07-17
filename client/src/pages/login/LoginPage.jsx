@@ -51,59 +51,53 @@ export default function LoginPage() {
           <br />
           <strong>Your plants deserve organization.</strong>
         </p>
-        <p>
-          Don't have an account ?<Link to="/signup">Click here</Link>
-        </p>
       </div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="email-login">
-          <label htmlFor="email">Email: </label>
-          <input
-            type="text"
-            name="email"
-            className="input-login"
-            {...register("email", {
-              required: "This filed is required !",
-              pattern: {
-                value: /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/,
-                message: "Invalid email format",
-              },
-              maxLength: {
-                value: 120,
-                message: "You can't have more than 120 characters",
-              },
-            })}
-          />
-          {errors.email && <p className="formError"> {errors.email.message}</p>}
-        </div>
-
-        <div>
-          <label htmlFor="password">Password: </label>
-          <input
-            type="password"
-            name="password"
-            {...register("password", {
-              required: "This field is required !",
-              pattern: {
-                value:
-                  /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,64}$/,
-                message:
-                  "You need at least 8 characters, including one uppercase, one number and a special character",
-              },
-              maxLength: {
-                value: 64,
-                message: "You can't put more that 64 characters",
-              },
-            })}
-          />
-          {errors.password && (
-            <p className="formError">{errors.password.message}</p>
-          )}
-        </div>
-
+      <form onSubmit={handleSubmit(onSubmit)} className="Form">
+        <label htmlFor="email">Email: </label>
+        <input
+          type="text"
+          name="email"
+          className="input-login"
+          {...register("email", {
+            required: "This filed is required !",
+            pattern: {
+              value: /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/,
+              message: "Invalid email format",
+            },
+            maxLength: {
+              value: 120,
+              message: "You can't have more than 120 characters",
+            },
+          })}
+        />
+        {errors.email && <p className="formError"> {errors.email.message}</p>}
+        <label htmlFor="password">Password: </label>
+        <input
+          type="password"
+          name="password"
+          {...register("password", {
+            required: "This field is required !",
+            pattern: {
+              value:
+                /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,64}$/,
+              message:
+                "You need at least 8 characters, including one uppercase, one number and a special character",
+            },
+            maxLength: {
+              value: 64,
+              message: "You can't put more that 64 characters",
+            },
+          })}
+        />
+        {errors.password && (
+          <p className="formError">{errors.password.message}</p>
+        )}
         <button className="buttonForm" type="submit" onClick={useEffect}>
           Login
         </button>
+        <p>
+          Don't have an account? <Link to="/signup">Create Account</Link>
+        </p>
       </form>
     </section>
   );
