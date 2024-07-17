@@ -9,7 +9,7 @@ CREATE TABLE user (
   username VARCHAR(80) NOT NULL,
   email VARCHAR(120) NOT NULL UNIQUE,
   password VARCHAR(255) NOT NULL,
-  role_id INT UNSIGNED NOT NULL,
+  role_id INT UNSIGNED NOT NULL DEFAULT 1,
   FOREIGN KEY(role_id) REFERENCES role(id)
 );
 
@@ -47,3 +47,7 @@ CREATE TABLE user_plant (
   FOREIGN KEY(user_id) REFERENCES user(id),
   FOREIGN KEY(plant_id) REFERENCES plant(id)
 );
+
+
+/* CREATION ROLE */
+INSERT INTO role (name) VALUES ('user'), ('admin');
