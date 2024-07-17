@@ -1,23 +1,25 @@
 /* eslint-disable react/jsx-props-no-spreading */
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import "./SignupPage.css";
 
-export default function LoginPage() {
+export default function SignupPage() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
     watch,
-    reset,
   } = useForm();
 
   const apiURL = import.meta.env.VITE_API_URL;
 
   const onSubmit = async (data) => {
     try {
-      await axios.post(`${apiURL}/api/user/register`, data);
-      reset();
+      await axios
+        .post(`${apiURL}/api/user/register`, data)
+        .finally(() => navigate("/"));
     } catch (err) {
       console.error(err);
     }

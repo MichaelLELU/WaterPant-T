@@ -7,7 +7,7 @@ class UserRepository extends AbstractRepository {
 
   async create(user) {
     const { username, email, password } = user;
-    
+
     const [result] = await this.database.query(
       `INSERT INTO ${this.table} (username, email, password) VALUES (?, ?, ?)`,
       [username, email, password]
@@ -35,7 +35,7 @@ class UserRepository extends AbstractRepository {
 
   async searchByEmail(email) {
     const [result] = await this.database.query(
-      `SELECT username, email, password, r.name AS role FROM ${this.table} JOIN role AS r ON user.role_id=r.id WHERE email = ?`,
+      `SELECT username, email, password, user.id AS userid ,r.name AS role FROM ${this.table} JOIN role AS r ON user.role_id=r.id WHERE email = ?`,
       [email]
     );
 
