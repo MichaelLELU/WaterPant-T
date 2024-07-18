@@ -13,9 +13,6 @@ function App() {
 
   return (
     <main>
-      <p>
-        {user?.username} connected as {user?.role}
-      </p>
       <ToolsBar user={user} setUser={setUser} />
       <Outlet context={{ user, setUser }} />
     </main>

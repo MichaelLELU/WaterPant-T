@@ -25,6 +25,15 @@ class PlantRepository extends AbstractRepository {
 
     return rows;
   }
+
+  async readByPlace(id) {
+    const [rows] = await this.database.query(
+      `SELECT id, name, surname, picture, place FROM ${this.table} WHERE place = ?`,
+      [id]
+    );
+
+    return rows;
+  }
 }
 
 module.exports = PlantRepository;

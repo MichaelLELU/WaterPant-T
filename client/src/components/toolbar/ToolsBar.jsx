@@ -1,4 +1,4 @@
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 import userLogout from "../../utils/logout";
 
@@ -14,28 +14,46 @@ export default function ToolsBar({ user, setUser }) {
   };
 
   return (
-    <div className="toolsbar">
-      <Link to="/">
+    <nav className="toolsbar">
+      <NavLink to="/">
         <img className="logo" src="../../../assets/WPT.png" alt="logo wp-t" />
-      </Link>
+      </NavLink>
       {user && (
         <ul>
           <li>
-            <button type="button" onClick={toggleLogout}>
+            <button
+              className="navButton"
+              id="logout"
+              type="button"
+              onClick={toggleLogout}
+            >
               Logout
             </button>
           </li>
           <li>
-            <Link to="/addplant">
-              <button type="button">Add Plant</button>
-            </Link>
+            <NavLink to="/addplant">
+              <button className="navButton" type="button">
+                Add Plant
+              </button>
+            </NavLink>
           </li>
           <li>
-            <button type="button"> Calendar</button>
+            <NavLink to="/calendar">
+              <button className="navButton" type="button">
+                Calendar
+              </button>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/">
+              <button className="navButton" type="button">
+                {user?.username} Page
+              </button>
+            </NavLink>
           </li>
         </ul>
       )}
-    </div>
+    </nav>
   );
 }
 

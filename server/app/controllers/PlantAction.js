@@ -11,6 +11,17 @@ const browse = async (req, res, next) => {
   }
 };
 
+const read = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const plantes = await tables.plant.readByPlace(id);
+
+    res.status(200).json(plantes);
+  } catch (err) {
+    next(err);
+  }
+};
+
 const add = async (req, res, next) => {
   const plant = req.body;
   try {
@@ -23,4 +34,4 @@ const add = async (req, res, next) => {
   }
 };
 
-module.exports = { browse, add };
+module.exports = { browse, add, read };

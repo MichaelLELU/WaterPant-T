@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useEffect } from "react";
 import { Link, useOutletContext, useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./LoginPage.css";
 
 export default function LoginPage() {
   const { user, setUser } = useOutletContext();
@@ -42,14 +43,14 @@ export default function LoginPage() {
   };
   return (
     <section>
-      <div>
+      <div className="description">
         <h1>Login</h1>
         <p>
           Sign up or log in to access your personal watering schedule (with the
           ability to add plants with their photos, a forecasted watering
           calendar, and more to come).
           <br />
-          <strong>Your plants deserve organization.</strong>
+          <strong className="slogan">Your plants deserve organization.</strong>
         </p>
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className="Form">
