@@ -23,7 +23,7 @@ input:focus {
 ul {
   display: flex;
   flex-direction: column-reverse;
-  gap: 0.8em;
+  gap: 0.3em;
   list-style-type: none;
 }
 
@@ -37,6 +37,10 @@ ul {
   padding: 0.2em 1em;
   margin-top: 1em;
   cursor: pointer;
+}
+
+.buttonForm:hover {
+  box-shadow: none;
 }
 
 .Form {
@@ -54,6 +58,12 @@ ul {
 .Form input {
   width: 60%;
   padding: 0.5em;
+}
+
+.formError {
+  text-align: center;
+  color: var(--red);
+  font-size: 0.8rem;
 }
 
 @media (min-width: 700px) {

@@ -1,0 +1,13 @@
+.cardContainer {
+  text-align: center;
+  margin: 0;
+}
+.cardImg {
+  max-width: 10em;
+}
+
+@media (min-width: 700px) {
+  .cardImg {
+    max-width: 20em;
+  }
+}

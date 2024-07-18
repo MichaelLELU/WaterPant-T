@@ -30,7 +30,7 @@
 }
 
 @media (min-width: 700px) {
-  .navButton {
-    font-size: 1.6em;
+  .toolsbar {
+    padding-left: 2em;
   }
 }

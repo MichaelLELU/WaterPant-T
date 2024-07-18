@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
+import "./PlantCard.css";
 
 export default function PlantCard({ plant }) {
   return (
-    <div className="card">
-      <h2>{plant.name}</h2>
-      <img src={plant.picture} alt={plant.name} />
-      <p>{plant.surname}</p>
+    <div className="cardContainer">
+      <h3>{plant.surname}</h3>
+      <p>{plant.name}</p>
+      <img src={plant.picture} alt={plant.name} className="cardImg" />
     </div>
   );
 }

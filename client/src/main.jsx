@@ -9,6 +9,7 @@ import SignupPage from "./pages/signup/SignupPage";
 import LoginPage from "./pages/login/LoginPage";
 import UserPage from "./pages/user/UserPage";
 import AddPlantPage from "./pages/addplant/AddPlantPage";
+import CalendarPage from "./pages/calendar/CalendarPage";
 import App from "./App";
 import "./App.css";
 
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/addplant",
         element: <AddPlantPage />,
+      },
+      {
+        path: "/calendar",
+        element: <CalendarPage />,
       },
       {
         path: "/*",

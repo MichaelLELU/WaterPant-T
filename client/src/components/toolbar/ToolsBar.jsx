@@ -1,4 +1,4 @@
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 import userLogout from "../../utils/logout";
 
@@ -15,9 +15,9 @@ export default function ToolsBar({ user, setUser }) {
 
   return (
     <nav className="toolsbar">
-      <Link to="/">
+      <NavLink to="/">
         <img className="logo" src="../../../assets/WPT.png" alt="logo wp-t" />
-      </Link>
+      </NavLink>
       {user && (
         <ul>
           <li>
@@ -31,17 +31,25 @@ export default function ToolsBar({ user, setUser }) {
             </button>
           </li>
           <li>
-            <Link to="/addplant">
+            <NavLink to="/addplant">
               <button className="navButton" type="button">
                 Add Plant
               </button>
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <button className="navButton" type="button">
-              {" "}
-              Calendar
-            </button>
+            <NavLink to="/calendar">
+              <button className="navButton" type="button">
+                Calendar
+              </button>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/">
+              <button className="navButton" type="button">
+                {user?.username} Page
+              </button>
+            </NavLink>
           </li>
         </ul>
       )}

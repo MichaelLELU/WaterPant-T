@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, Navigate } from "react-router-dom";
 
 export default function AddPlantPage() {
   const { user } = useOutletContext();
@@ -52,7 +52,7 @@ export default function AddPlantPage() {
 
   const requiredFieldError = "This field is required !";
 
-  return (
+  return user?.role === "user" ? (
     <section>
       <h1>Add a Plant</h1>
       <form onSubmit={handleSubmit(onSubmit)} className="Form">
@@ -68,7 +68,7 @@ export default function AddPlantPage() {
             },
           })}
         />
-        {errors.name && <p> {errors.name.message}</p>}
+        {errors.name && <p className="formError"> {errors.name.message}</p>}
 
         <label htmlFor="surname">Nickname:</label>
         <input
@@ -94,25 +94,47 @@ export default function AddPlantPage() {
             },
           })}
         />
-        {errors.place && <p> {errors.place.message}</p>}
+        {errors.place && <p className="formError"> {errors.place.message}</p>}
+
+        {/*          TODO add a required message for the 2 following fields */}
 
         <label htmlFor="watering">Watering Frequency:</label>
-        <select name="watering" {...register("wateringFid")}>
+        <select
+          name="watering"
+          {...register("wateringFid", {
+            required: requiredFieldError,
+          })}
+        >
+          <option selected disabled>
+            ----
+          </option>
           {wateringData?.map((wf) => (
             <option key={wf.id} value={wf.id}>
               {`${wf.frequency}`}
             </option>
           ))}
         </select>
+        {errors.watering && (
+          <p className="formError"> {errors.watering.message}</p>
+        )}
 
         <label htmlFor="solar">Solar Exposition:</label>
-        <select name="solar" {...register("solarEid")}>
+        <select
+          name="solar"
+          {...register("solarEid", {
+            required: requiredFieldError,
+          })}
+        >
+          <option selected disabled>
+            ----
+          </option>
           {solarData?.map((sol) => (
             <option key={sol.id} value={sol.id}>
               {`${sol.exposition}`}
             </option>
           ))}
         </select>
+        {errors.solar && <p className="formError"> {errors.solar.message}</p>}
 
         <label htmlFor="picture">Picture:</label>
         <input
@@ -122,7 +144,9 @@ export default function AddPlantPage() {
             required: requiredFieldError,
           })}
         />
-        {errors.picture && <p> {errors.picture.message}</p>}
+        {errors.picture && (
+          <p className="formError"> {errors.picture.message}</p>
+        )}
 
         <button
           type="submit"
@@ -134,5 +158,7 @@ export default function AddPlantPage() {
         </button>
       </form>
     </section>
+  ) : (
+    <Navigate to="/" />
   );
 }
