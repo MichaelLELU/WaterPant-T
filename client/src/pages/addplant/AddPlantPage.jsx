@@ -15,12 +15,14 @@ export default function AddPlantPage() {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   const onSubmit = async (uploadData) => {
     console.info(uploadData);
     try {
       await axios.post(`${apiURL}/api/plant/add`, uploadData);
+      reset();
     } catch (err) {
       console.error(err);
     }

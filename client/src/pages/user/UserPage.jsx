@@ -1,4 +1,5 @@
 import { Link, useOutletContext } from "react-router-dom";
+import PlantPanel from "../../components/plantpanel/PlantPanel";
 
 export default function UserPage() {
   const { user } = useOutletContext();
@@ -6,6 +7,7 @@ export default function UserPage() {
   return (
     <>
       <h1>Hello {user?.username}</h1>
+      <PlantPanel />
       <Link to="/addplant">
         <button type="button" className="buttonForm">
           Add a Plant

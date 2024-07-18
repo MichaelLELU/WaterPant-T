@@ -1,0 +1,9 @@
+.description {
+  text-align: center;
+}
+.slogan {
+  color: var(--accent-color);
+  font-style: italic;
+  font-size: 1.3em;
+  line-height: 1.2em;
+}

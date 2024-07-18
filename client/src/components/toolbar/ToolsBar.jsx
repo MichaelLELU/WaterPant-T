@@ -14,28 +14,38 @@ export default function ToolsBar({ user, setUser }) {
   };
 
   return (
-    <div className="toolsbar">
+    <nav className="toolsbar">
       <Link to="/">
         <img className="logo" src="../../../assets/WPT.png" alt="logo wp-t" />
       </Link>
       {user && (
         <ul>
           <li>
-            <button type="button" onClick={toggleLogout}>
+            <button
+              className="navButton"
+              id="logout"
+              type="button"
+              onClick={toggleLogout}
+            >
               Logout
             </button>
           </li>
           <li>
             <Link to="/addplant">
-              <button type="button">Add Plant</button>
+              <button className="navButton" type="button">
+                Add Plant
+              </button>
             </Link>
           </li>
           <li>
-            <button type="button"> Calendar</button>
+            <button className="navButton" type="button">
+              {" "}
+              Calendar
+            </button>
           </li>
         </ul>
       )}
-    </div>
+    </nav>
   );
 }
 

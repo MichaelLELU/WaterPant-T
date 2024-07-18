@@ -20,6 +20,13 @@ input:focus {
   outline: 2px solid var(--accent-color);
 }
 
+ul {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.8em;
+  list-style-type: none;
+}
+
 .buttonForm {
   background-color: var(--accent-color);
   color: var(--neutral-color);
@@ -59,5 +66,11 @@ input:focus {
   .Form input {
     width: 45%;
     padding: 0.5em;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 2em;
   }
 }

@@ -12,3 +12,25 @@
 .logo {
   width: 5em;
 }
+
+.navButton {
+  border: none;
+  background-color: transparent;
+  color: var(--accent-color);
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.navButton:hover {
+  text-decoration: underline;
+}
+
+#logout {
+  color: var(--red);
+}
+
+@media (min-width: 700px) {
+  .navButton {
+    font-size: 1.6em;
+  }
+}
