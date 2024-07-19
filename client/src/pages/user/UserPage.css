@@ -16,7 +16,14 @@
 
 .userPanel {
   background-color: var(--main-color-green);
+  border-radius: 15px;
   margin-top: 3em;
   padding-top: 1em;
   padding-bottom: 3em;
+}
+
+@media (min-width: 700px) {
+  .userPanel {
+    margin: 5em;
+  }
 }
