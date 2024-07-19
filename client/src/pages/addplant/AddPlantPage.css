@@ -1,0 +1,6 @@
+.selectInput {
+  background-color: var(--neutral-color);
+  border: 1px solid var(--main-color-black);
+  border-radius: 5px;
+  padding: 0.5em;
+}

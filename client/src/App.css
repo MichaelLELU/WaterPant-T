@@ -11,6 +11,12 @@ body {
   margin: 0;
 }
 
+label {
+  text-align: start;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
 input {
   border-radius: 5px;
   border: 1px solid var(--main-color-black);
