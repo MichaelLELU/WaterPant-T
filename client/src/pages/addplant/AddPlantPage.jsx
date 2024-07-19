@@ -54,7 +54,7 @@ export default function AddPlantPage() {
 
   return user?.role === "user" ? (
     <section>
-      <h1>Add a Plant</h1>
+      <h1 className="titre">Add a Plant</h1>
       <form onSubmit={handleSubmit(onSubmit)} className="Form">
         <label htmlFor="name">Name:</label>
         <input

@@ -1,0 +1,11 @@
+.RGPD {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.checkbox {
+  max-width: 1.5em;
+  max-height: 1.5em;
+  margin-left: 2em;
+}

@@ -1,0 +1,24 @@
+.imageDetail {
+  width: 100%;
+}
+
+.deleteButton {
+  background-color: var(--red);
+  color: var(--neutral-color);
+  box-shadow: rgba(0, 0, 0, 0.2) 2.4px 2.4px 3.2px;
+  font-size: 1em;
+  border: none;
+  border-radius: 50px;
+  padding: 0.2em 1em;
+  margin-top: 1em;
+  cursor: pointer;
+}
+
+.Info {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.description {
+  font-style: italic;
+}

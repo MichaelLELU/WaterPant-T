@@ -33,5 +33,19 @@ const add = async (req, res, next) => {
     next(error);
   }
 };
+const destroy = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const affectedRows = await tables.plant.delete(id);
 
-module.exports = { browse, add, read };
+    if (affectedRows === 0) {
+      res.sendStatus(404);
+    } else {
+      res.sendStatus(200);
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
+module.exports = { browse, add, read, destroy };

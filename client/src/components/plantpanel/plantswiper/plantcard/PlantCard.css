@@ -1,6 +1,8 @@
 .cardContainer {
   text-align: center;
   margin: 0;
+  background-color: var(--neutral-color);
+  border-radius: 15px;
 }
 .cardImg {
   max-width: 10em;
