@@ -9,6 +9,9 @@ ability to add plants with their photos, a forecasted watering calendar, and mor
 
 ![Capture d'écran 2024-07-19 121444](https://github.com/user-attachments/assets/b200ad27-f1ec-4014-ad0b-a48595051e25)
 
+# Model Figma:
+
+![Capture d'écran 2024-07-19 121814](https://github.com/user-attachments/assets/b036bf95-f3d1-45f6-8c97-bd39050591a9)
 
 # cp4-wcs-07-2024
 
