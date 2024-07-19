@@ -54,6 +54,8 @@ ul {
   padding-top: 2em;
   padding-bottom: 2em;
   background-color: var(--main-color-green);
+  margin-left: 5%;
+  margin-right: 5%;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
