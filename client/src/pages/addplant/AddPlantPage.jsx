@@ -19,7 +19,6 @@ export default function AddPlantPage() {
   } = useForm();
 
   const onSubmit = async (uploadData) => {
-    console.info(uploadData);
     try {
       await axios.post(`${apiURL}/api/plant/add`, uploadData);
       reset();

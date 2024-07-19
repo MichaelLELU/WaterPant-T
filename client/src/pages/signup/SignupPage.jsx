@@ -140,15 +140,7 @@ export default function SignupPage() {
           <p className="formError">{errors.confirmpassword.message}</p>
         )}
         <section className="RGPD">
-          <input
-            className="checkbox"
-            type="checkbox"
-            name="terms"
-            {...register("terms", {
-              required: "You must accept the terms and conditions",
-            })}
-          />
-          {errors.terms && <p className="formError">{errors.terms.message}</p>}
+          <input className="checkbox" type="checkbox" name="terms" />
           <p>
             By checking this box, I confirm and accept the{" "}
             <span className="Info">legal notices and CGU</span>
