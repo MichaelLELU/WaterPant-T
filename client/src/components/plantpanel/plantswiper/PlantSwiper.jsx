@@ -13,15 +13,15 @@ export default function PlantSwiper({ plants }) {
   return (
     <Swiper
       slidesPerView={2}
-      spaceBetween={1}
+      spaceBetween={2}
       breakpoints={{
         768: {
-          slidesPerView: 3,
+          slidesPerView: 2,
           spaceBetween: 20,
         },
         1024: {
-          slidesPerView: 4,
-          spaceBetween: 50,
+          slidesPerView: 2,
+          spaceBetween: 20,
         },
       }}
       pagination={{
