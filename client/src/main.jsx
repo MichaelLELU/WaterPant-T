@@ -9,6 +9,7 @@ import DetailPage from "./pages/detail/DetailPage";
 import SignupPage from "./pages/signup/SignupPage";
 import LoginPage from "./pages/login/LoginPage";
 import UserPage from "./pages/user/UserPage";
+import AdminPage from "./pages/admin/AdminPage";
 import AddPlantPage from "./pages/addplant/AddPlantPage";
 import CalendarPage from "./pages/calendar/CalendarPage";
 import App from "./App";
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/:usernamepage",
         element: <UserPage />,
+      },
+      {
+        path: "/rullmyworld",
+        element: <AdminPage />,
       },
       {
         path: "/addplant",

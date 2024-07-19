@@ -44,7 +44,7 @@ export default function LoginPage() {
   return (
     <section>
       <div className="description">
-        <h1 className="">Login</h1>
+        <h1>Login</h1>
         <p>
           Sign up or log in to access your personal watering schedule (with the
           ability to add plants with their photos, a forecasted watering
