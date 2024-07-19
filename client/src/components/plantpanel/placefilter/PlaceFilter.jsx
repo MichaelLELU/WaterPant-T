@@ -8,7 +8,7 @@ export default function PlaceFilter({ plants, filter, setFilter }) {
   const handleFilterPlace = (e) => {
     setFilter(e.target.value);
   };
-  // refreshFilter function is used to reset the filter
+
   const refreshFilter = () => {
     setFilter(undefined);
     navigate("/");

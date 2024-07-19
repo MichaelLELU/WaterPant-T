@@ -16,7 +16,7 @@ export default function ToolsBar({ user, setUser }) {
   return (
     <nav className="toolsbar">
       <NavLink to="/">
-        <img className="logo" src="../../../assets/WPT.png" alt="logo wp-t" />
+        <img className="logo" src="../../../assets/WP-T.png" alt="logo wp-t" />
       </NavLink>
       {user && (
         <ul>
@@ -45,11 +45,19 @@ export default function ToolsBar({ user, setUser }) {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/">
-              <button className="navButton" type="button">
-                {user?.username} Page
-              </button>
-            </NavLink>
+            {user.role === "admin" ? (
+              <NavLink to="/rullmyworld">
+                <button className="navButton" type="button">
+                  AdminPanel
+                </button>
+              </NavLink>
+            ) : (
+              <NavLink to="/">
+                <button className="navButton" type="button">
+                  {user?.username} Page
+                </button>
+              </NavLink>
+            )}
           </li>
         </ul>
       )}
@@ -60,6 +68,7 @@ export default function ToolsBar({ user, setUser }) {
 ToolsBar.propTypes = {
   user: PropTypes.shape({
     username: PropTypes.string.isRequired,
+    role: PropTypes.string.isRequired,
   }).isRequired,
   setUser: PropTypes.func.isRequired,
 };
