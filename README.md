@@ -5,6 +5,10 @@ ability to add plants with their photos, a forecasted watering calendar, and mor
 # 💻 Tech Stack:
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)  ![Context-API](https://img.shields.io/badge/Context--Api-000000?style=for-the-badge&logo=react)  ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)  ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white) ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white) ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white) ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 
+# DataBase Modelisation:
+
+![DBmodelisation]([https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white](https://cdn.discordapp.com/attachments/1240290794535911509/1263793759582294027/image.png?ex=669b8728&is=669a35a8&hm=504570a01dbe981e9df919e9b4af389ad19d06de259153ffd073eb93e661fea1&))
+
 # cp4-wcs-07-2024
 
 This project uses Harmonia. Harmonia is a framework meant to serve as a foundation for every project following the React-Express-MySQL stack, as learned in Wild Code School.
@@ -32,4 +36,6 @@ git config --global core.autocrlf false
 - `dev:client` : Starts the React client
 - `dev:back` : Starts the Express server
 - `lint` : Runs validation tools (will be executed on every _commit_, and refuse unclean code)
+
+
 
