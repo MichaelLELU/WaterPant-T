@@ -30,35 +30,40 @@ export default function ToolsBar({ user, setUser }) {
               Logout
             </button>
           </li>
-          <li>
-            <NavLink to="/addplant">
-              <button className="navButton" type="button">
-                Add Plant
-              </button>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/calendar">
-              <button className="navButton" type="button">
-                Calendar
-              </button>
-            </NavLink>
-          </li>
-          <li>
-            {user.role === "admin" ? (
+
+          {user.role === "admin" ? (
+            <li>
               <NavLink to="/rullmyworld">
                 <button className="navButton" type="button">
                   AdminPanel
                 </button>
               </NavLink>
-            ) : (
-              <NavLink to="/">
-                <button className="navButton" type="button">
-                  {user?.username} Page
-                </button>
-              </NavLink>
-            )}
-          </li>
+            </li>
+          ) : (
+            <>
+              <li>
+                <NavLink to="/addplant">
+                  <button className="navButton" type="button">
+                    Add Plant
+                  </button>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/calendar">
+                  <button className="navButton" type="button">
+                    Calendar
+                  </button>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/">
+                  <button className="navButton" type="button">
+                    {user?.username} Page
+                  </button>
+                </NavLink>
+              </li>
+            </>
+          )}
         </ul>
       )}
     </nav>
