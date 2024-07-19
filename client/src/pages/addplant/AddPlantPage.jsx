@@ -20,7 +20,6 @@ export default function AddPlantPage() {
   } = useForm();
 
   const onSubmit = async (uploadData) => {
-    console.info(uploadData);
     try {
       await axios.post(`${apiURL}/api/plant/add`, uploadData);
       reset();
@@ -144,16 +143,7 @@ export default function AddPlantPage() {
         {errors.solar && <p className="formError"> {errors.solar.message}</p>}
 
         <label htmlFor="picture">Picture:</label>
-        <input
-          type="text"
-          name="picture"
-          {...register("picture", {
-            required: requiredFieldError,
-          })}
-        />
-        {errors.picture && (
-          <p className="formError"> {errors.picture.message}</p>
-        )}
+        <input type="text" name="picture" {...register("picture")} />
 
         <button
           type="submit"
