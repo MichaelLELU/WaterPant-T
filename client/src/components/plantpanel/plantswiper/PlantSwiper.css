@@ -1,0 +1,21 @@
+#card {
+  margin: 0;
+}
+
+#swiper {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.linkCard {
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
+@media (min-width: 700px) {
+  #card {
+    margin: 5em;
+    margin-top: 0;
+  }
+}

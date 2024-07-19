@@ -1,11 +1,11 @@
-@import url("../../variables.css");
-
-.formError {
-  text-align: center;
-  color: var(--red);
-  font-size: 0.8rem;
+.RGPD {
+  display: flex;
+  align-items: center;
+  gap: 1em;
 }
 
-.buttonForm:hover {
-  box-shadow: none;
+.checkbox {
+  max-width: 1.5em;
+  max-height: 1.5em;
+  margin-left: 2em;
 }

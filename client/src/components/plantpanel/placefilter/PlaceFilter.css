@@ -1,0 +1,35 @@
+.filterBar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.lucidButtonR {
+  background-color: var(--main-color-green);
+  border: none;
+  color: var(--neutral-color);
+  margin-left: 3em;
+}
+
+.lucidButtonR:focus {
+  color: var(--accent-color);
+}
+
+.buttonFilter {
+  border: none;
+  background-color: var(--main-color-green);
+  color: var(--neutral-color);
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.buttonFilter:hover {
+  font-weight: bolder;
+}
+
+.buttonFilter:focus {
+  color: var(--accent-color);
+  background-color: var(--neutral-color);
+  border-radius: 5px;
+}

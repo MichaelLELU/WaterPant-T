@@ -12,3 +12,36 @@
 .logo {
   width: 5em;
 }
+
+.navButton {
+  border: none;
+  background-color: transparent;
+  color: var(--accent-color);
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.navButton {
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(var(--accent-color), var(--accent-color));
+  background-size: 0 3px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease-in-out;
+}
+
+.navButton:hover {
+  background-size: 100% 3px;
+  background-position: 0 100%;
+}
+
+#logout {
+  color: var(--red);
+}
+
+@media (min-width: 700px) {
+  .toolsbar {
+    padding-left: 2em;
+  }
+}
