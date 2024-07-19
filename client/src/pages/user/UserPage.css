@@ -11,6 +11,7 @@
   border: none;
   color: var(--accent-color);
   margin-left: 3em;
+  cursor: pointer;
 }
 
 .userPanel {

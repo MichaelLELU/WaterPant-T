@@ -1,7 +1,7 @@
 @import url("./variables.css");
 @font-face {
   font-family: faustina;
-  src: url("https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,300..800;1,300..800&display=swap");
+  src: url("../assets/font/Faustina/Faustina-VariableFont_wght.ttf");
 }
 
 body {
@@ -25,6 +25,12 @@ ul {
   flex-direction: column-reverse;
   gap: 0.3em;
   list-style-type: none;
+}
+
+.titre {
+  text-align: center;
+  font-size: 1.5em;
+  margin-top: 1em;
 }
 
 .buttonForm {

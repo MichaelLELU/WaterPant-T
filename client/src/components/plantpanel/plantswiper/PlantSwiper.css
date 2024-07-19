@@ -8,6 +8,11 @@
   width: 100%;
 }
 
+.linkCard {
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
 @media (min-width: 700px) {
   #card {
     margin: 5em;

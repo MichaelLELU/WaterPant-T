@@ -2,9 +2,15 @@
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import "./SignupPage.css";
 
 export default function SignupPage() {
   const navigate = useNavigate();
+
+  const handleBack = () => {
+    window.history.back();
+  };
+
   const {
     register,
     handleSubmit,
@@ -28,7 +34,10 @@ export default function SignupPage() {
 
   return (
     <section>
-      <h1>Register</h1>
+      <button type="button" onClick={handleBack} className="buttonForm">
+        Return
+      </button>
+      <h1 className="titre">Register</h1>
       <form className="Form" onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="username">Username:</label>
         <input
@@ -130,7 +139,21 @@ export default function SignupPage() {
         {errors.confirmpassword && (
           <p className="formError">{errors.confirmpassword.message}</p>
         )}
-
+        <section className="RGPD">
+          <input
+            className="checkbox"
+            type="checkbox"
+            name="terms"
+            {...register("terms", {
+              required: "You must accept the terms and conditions",
+            })}
+          />
+          {errors.terms && <p className="formError">{errors.terms.message}</p>}
+          <p>
+            By checking this box, I confirm and accept the{" "}
+            <span className="Info">legal notices and CGU</span>
+          </p>
+        </section>
         <button className="buttonForm" type="submit">
           Create
         </button>

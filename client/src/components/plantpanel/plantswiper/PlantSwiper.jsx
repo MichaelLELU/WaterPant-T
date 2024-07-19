@@ -1,4 +1,5 @@
 /* eslint-disable import/no-unresolved */
+import { Link } from "react-router-dom";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import PropTypes from "prop-types";
@@ -19,7 +20,7 @@ export default function PlantSwiper({ plants }) {
           spaceBetween: 20,
         },
         1024: {
-          slidesPerView: 5,
+          slidesPerView: 4,
           spaceBetween: 50,
         },
       }}
@@ -36,7 +37,9 @@ export default function PlantSwiper({ plants }) {
     >
       {plants?.map((p) => (
         <SwiperSlide key={p.id} id="card">
-          <PlantCard plant={p} />
+          <Link to={`/plant/${p.id}`} className="linkCard">
+            <PlantCard plant={p} />
+          </Link>
         </SwiperSlide>
       ))}
     </Swiper>
