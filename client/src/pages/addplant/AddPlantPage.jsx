@@ -3,6 +3,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import { useOutletContext, Navigate } from "react-router-dom";
+import "./AddPlantPage.css";
 
 export default function AddPlantPage() {
   const { user } = useOutletContext();
@@ -70,7 +71,17 @@ export default function AddPlantPage() {
         {errors.name && <p className="formError"> {errors.name.message}</p>}
 
         <label htmlFor="surname">Nickname:</label>
-        <input type="text" name="surname" {...register("surname")} />
+        <input
+          type="text"
+          name="surname"
+          {...register("surname", {
+            required: requiredFieldError,
+            minLength: {
+              value: 2,
+              message: "You need at least 2 characters",
+            },
+          })}
+        />
         {errors.surname && (
           <p className="formError"> {errors.surname.message}</p>
         )}
@@ -80,6 +91,7 @@ export default function AddPlantPage() {
           type="text"
           name="place"
           {...register("place", {
+            required: requiredFieldError,
             minLength: {
               value: 2,
               message: "You need at least 2 characters",
@@ -92,6 +104,7 @@ export default function AddPlantPage() {
 
         <label htmlFor="watering">Watering Frequency:</label>
         <select
+          className="selectInput"
           name="watering"
           {...register("wateringFid", {
             required: requiredFieldError,
@@ -112,6 +125,7 @@ export default function AddPlantPage() {
 
         <label htmlFor="solar">Solar Exposition:</label>
         <select
+          className="selectInput"
           name="solar"
           {...register("solarEid", {
             required: requiredFieldError,
