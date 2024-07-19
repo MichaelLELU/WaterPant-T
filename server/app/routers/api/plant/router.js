@@ -9,9 +9,11 @@ const {
   destroy,
 } = require("../../../controllers/PlantAction");
 
+const plantValidation = require("../../../services/plantValidation");
+
 router.get("/:id", browse);
 
-router.post("/add", add);
+router.post("/add", plantValidation, add);
 
 router.get("/place/:id", read);
 
