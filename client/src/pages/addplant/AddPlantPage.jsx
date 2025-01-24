@@ -19,9 +19,19 @@ export default function AddPlantPage() {
     reset,
   } = useForm();
 
-  const onSubmit = async (uploadData) => {
+  const onSubmit = async (data) => {
     try {
-      await axios.post(`${apiURL}/api/plant/add`, uploadData);
+      const formData = new FormData();
+
+      Object.keys(data).forEach((key) => {
+        formData.append(key, data[key]);
+      });
+
+      console.info(formData);
+      await axios.post(`${apiURL}/api/plant/add`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+
       reset();
     } catch (err) {
       console.error(err);
@@ -142,8 +152,19 @@ export default function AddPlantPage() {
         </select>
         {errors.solar && <p className="formError"> {errors.solar.message}</p>}
 
-        <label htmlFor="picture">Picture:</label>
-        <input type="text" name="picture" {...register("picture")} />
+        <label htmlFor="picture">Image:</label>
+        <input
+          type="file"
+          id="picture"
+          name="picture"
+          accept="picture/*"
+          {...register("picture", {
+            required: "L'image est obligatoire",
+          })}
+        />
+        {errors.picture && (
+          <p className="formError">{errors.picture.message}</p>
+        )}
 
         <button
           type="submit"
